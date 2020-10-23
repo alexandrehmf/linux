@@ -131,7 +131,7 @@ static void joydev_event(struct input_handle *handle,
 		event.type = JS_EVENT_AXIS;
 		event.number = joydev->absmap[code];
 		event.value = joydev_correct(value,
-					&joydev->corr[event.number]);
+					&joydev->corr);
 		if (event.value == joydev->abs[event.number])
 			return;
 		joydev->abs[event.number] = event.value;
